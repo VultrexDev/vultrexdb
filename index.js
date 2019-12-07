@@ -1,2 +1,2 @@
 const VultrexDB = require("./src/index");
-module.export = VultrexDB;
+module.exports = VultrexDB;
