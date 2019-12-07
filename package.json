@@ -1,0 +1,17 @@
+{
+  "name": "vultrex.db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  },
+  "keywords": [],
+  "author": "Stasium#0001, Host#00001",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^5.4.3"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^5.4.0"
+  }
+}
