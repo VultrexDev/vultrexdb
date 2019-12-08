@@ -16,12 +16,12 @@ module.exports = class VultrexDB {
 
     /**
      * Store the value with the given key inside of a database
-     * @param key 
-     * @param value 
+     * @param {string | number} key Required. 
+     * @param {any} value 
      * 
-     * Example:
+     * @example
      * const VultrexDB = require("vultrexdb");
-     * const db = new VultrexDB({ tableName: "myDB" });
+     * const db = new VultrexDB({ name: "myDB" });
      * 
      * db.set("vips", ["264378908756017154"]);
      * // The above code would set an array of VIP users in the "vips" key
@@ -35,12 +35,12 @@ module.exports = class VultrexDB {
 
     /**
      * Return the value for the given key or fall back to the default value from the database
-     * @param key 
-     * @param defaultValue 
+     * @param {string | number} key Required.  
+     * @param {any}defaultValue the fall back value
      * 
-     * Example:
+     * @example
      * const VultrexDB = require("vultrex.db");
-     * const db = new VultrexDB({ tableName: "myDB" });
+     * const db = new VultrexDB({ name: "myDB" });
      * 
      * db.get("vips", []);
      * // The above code would return: ["264378908756017154"] (an array of VIP users) or an empty array
@@ -55,10 +55,11 @@ module.exports = class VultrexDB {
 
     /**
      * Remove a specific key from the database
-     * @param key 
+     * @param {string | number} key Required. 
      * 
+     * @example
      * const VultrexDB = require("vultrex.db");
-     * const db = new VultrexDB({ tableName: "myDB" });
+     * const db = new VultrexDB({ name: "myDB" });
      * 
      * db.remove("vips");
      * // The above code would delete all the VIP users from the database
@@ -73,8 +74,9 @@ module.exports = class VultrexDB {
     /**
      * Deletes all data from the table
      * 
+     * @example
      * const VultrexDB = require("vultrex.db");
-     * const db = new VultrexDB({ tableName: "myDB" });
+     * const db = new VultrexDB({ name: "myDB" });
      * 
      * db.clear();
      * // The above code would destroy the whole table
