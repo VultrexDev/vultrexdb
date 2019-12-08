@@ -45,7 +45,7 @@ module.exports = class VultrexDB {
      * db.get("vips", []);
      * // The above code would return: ["264378908756017154"] (an array of VIP users) or an empty array
      */
-    get(key, defaultValue) {
+    get(key, defaultValue = null) {
         if (!["String", "Number"].includes(key.constructor.name)) {
             throw Error("[VultrexDB] Key must be a String or Number!");
         }
