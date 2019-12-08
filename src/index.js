@@ -1,6 +1,6 @@
 const sqlite = require("better-sqlite3");
 
-module.export = class VultrexDB {
+module.exports = class VultrexDB {
 
     constructor(options = {}) {
         this.tableName = options.name || "default"
