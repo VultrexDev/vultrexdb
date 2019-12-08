@@ -15,19 +15,23 @@ const db = new VultrexDB({
   name: "yourDatabaseName"
 });
 ```
-Return a value from a provided key:
+##### Return a value from a provided key:
 ```javascript
 return db.get("key");
 ```
-Set a value with a provided key:
+Optionally, you can return a default value if none exists in the database:
+```javascript
+return db.get("key", "defaultValue");
+```
+##### Set a value with a provided key:
 ```javascript
 db.set("key", "newValue");
 ```
-Remove a provided key:
+##### Remove a provided key:
 ```javascript
 db.remove("key");
 ```
-Destroy the entire table (WARNING: you will lose all data from doing this):
+##### Destroy the entire table (WARNING: you will lose all data from doing this):
 ```javascript
 db.clear();
 ```
