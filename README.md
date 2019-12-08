@@ -9,3 +9,9 @@ Not working? Run the following command in your Windows PowerShell:
 `npm i -g --add-python-to-path --vs2015 --production windows-build-tools`
 
 ### Documentation
+```javascript
+const VultrexDB = require("vultrex.db");
+const db = new VultrexDB({
+  name: "yourDatabaseName"
+});
+```
