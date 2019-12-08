@@ -10,7 +10,7 @@ Not working? Run the following command in your Windows PowerShell:
 
 ### Documentation
 ```javascript
-const VultrexDB = require("vultrex.db");
+const VultrexDB = require("vultrexdb");
 const db = new VultrexDB({
   name: "yourDatabaseName"
 });
