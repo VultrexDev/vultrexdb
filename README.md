@@ -12,13 +12,18 @@ Not working? Run the following command in your Terminal or Windows PowerShell:
 
 `npm i -g --add-python-to-path --vs2015 --production windows-build-tools`
 
-### Example Usage
+### Defining without Options
 
 ```javascript
 const VultrexDB = require("vultrexdb");
 
 const db = new VultrexDB();
-// with options
+```
+
+### Defining with Options
+```javascript
+const VultrexDB = require("vultrexdb");
+
 const db = new VultrexDB({
   name: "yourDatabaseName",
   timeout: 5000,
