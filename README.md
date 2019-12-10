@@ -1,37 +1,58 @@
 # Vultrex DB
+
 A simple SQLite Database Wrapper developed for novices in JavaScript and SQL - Developed with love by Stasium#0001
 
-### Installation
-NPM Installation: `npm i vultrex/vultrexdb`  
+## Installation
+
+```bash
+npm i vultrex/vultrexdb
+```  
   
-Not working? Run the following command in your Windows PowerShell:  
-  
+Not working? Run the following command in your Terminal or Windows PowerShell:
+
 `npm i -g --add-python-to-path --vs2015 --production windows-build-tools`
 
-### Documentation
+### Example Usage
+
 ```javascript
 const VultrexDB = require("vultrexdb");
+
+const db = new VultrexDB();
+// with options
 const db = new VultrexDB({
-  name: "yourDatabaseName"
+  name: "yourDatabaseName",
+  timeout: 5000,
+  fileMustExist: false,
+  verbose: null 
 });
 ```
-##### Return a value from a provided key:
+
+#### Return a value from a provided key:
+
 ```javascript
 return db.get("key");
 ```
+
 Optionally, you can return a default value if none exists in the database:
+
 ```javascript
 return db.get("key", "defaultValue");
 ```
-##### Set a value with a provided key:
+
+#### Set a value with a provided key:
+
 ```javascript
 db.set("key", "newValue");
 ```
-##### Remove a provided key:
+
+#### Remove a provided key:
+
 ```javascript
 db.remove("key");
 ```
-##### Destroy the entire table (WARNING: you will lose all data from doing this):
+
+#### Destroy the entire table (WARNING: you will lose all data from doing this):
+
 ```javascript
 db.clear();
 ```

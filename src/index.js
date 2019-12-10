@@ -1,17 +1,20 @@
 const sqlite = require("better-sqlite3");
 
 module.exports = class VultrexDB {
-
     constructor(options = {}) {
         this.tableName = options.name || "default"
-        this.db = new sqlite("./vultrex.db")
+        this.db = new sqlite("./vultrex.db", {
+            verbose: options.verbose,
+            timeout: options.timeout,
+            fileMustExist: options.fileMustExist
+        });
         this._init()
     }
 
     _init() {
-          this.db.prepare(`CREATE TABLE IF NOT EXISTS '${this.tableName}' (key TEXT PRIMARY KEY, value TEXT)`).run();
-          this.db.pragma("synchronous = 1");
-          this.db.pragma("journal_mode = wal");
+        this.db.prepare(`CREATE TABLE IF NOT EXISTS '${this.tableName}' (key TEXT PRIMARY KEY, value TEXT)`).run();
+        this.db.pragma("synchronous = 1");
+        this.db.pragma("journal_mode = wal");
     }
 
     /**
