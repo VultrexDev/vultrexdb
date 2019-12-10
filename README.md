@@ -20,6 +20,14 @@ const VultrexDB = require("vultrexdb");
 const db = new VultrexDB();
 ```
 
+### Options
+```
+name (string) - This is the name of your database table
+timeout (number) - This is the number (in milliseconds) to wait before executing queries on a locked database before throwing an error
+fileMustExist (boolean) - When set to true, if the file does not exist then an error will be thrown
+verbose (function) - Provide a function which is used on every SQL string executed by the database
+```
+
 ### Defining with Options
 ```javascript
 const VultrexDB = require("vultrexdb");
