@@ -1,12 +1,12 @@
 {
   "name": "vultrexdb",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A simple SQLite key wrapper for beginners / novices in JavaScript / SQL",
+  "main": "src/index.js",
   "scripts": {},
   "keywords": [],
   "author": "Stasium#0001, Host#00001",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "better-sqlite3": "^5.4.3"
   },
