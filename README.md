@@ -12,7 +12,7 @@ Not working? Run the following command in your Terminal or Windows PowerShell:
 
 `npm i -g --add-python-to-path --vs2015 --production windows-build-tools`
 
-### Defining without Options
+#### Defining without Options
 
 ```javascript
 const VultrexDB = require("vultrexdb");
@@ -20,7 +20,7 @@ const VultrexDB = require("vultrexdb");
 const db = new VultrexDB();
 ```
 
-### Options
+#### Options
 ```
 name (string) - This is the name of your database table
 timeout (number) - This is the number (in milliseconds) to wait before executing queries on a locked database before throwing an error
@@ -28,7 +28,7 @@ fileMustExist (boolean) - When set to true, if the file does not exist then an e
 verbose (function) - Provide a function which is used on every SQL string executed by the database
 ```
 
-### Defining with Options
+#### Defining with Options
 ```javascript
 const VultrexDB = require("vultrexdb");
 
