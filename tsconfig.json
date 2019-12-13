@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "module": "commonjs",
-        "target": "es2018",
+        "target": "ES6",
         "outDir": "lib",
         "lib": [
             "esnext",
