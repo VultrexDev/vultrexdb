@@ -4,9 +4,9 @@
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-  "build": "rm ./lib/* && tsc",
-  "types": "types/index.d.ts"
+  "build": "rm ./lib/* && tsc"
   },
+  "types": "types/index.d.ts",
   "keywords": [],
   "author": "Stasium#0001, Host#00001",
   "license": "ISC",
