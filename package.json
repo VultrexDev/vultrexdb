@@ -1,16 +1,20 @@
 {
-  "name": "vultrexdb",
-  "version": "1.1.0",
-  "description": "A simple SQLite key wrapper for beginners / novices in JavaScript / SQL",
-  "main": "src/index.js",
-  "scripts": {},
+  "name": "vultrex.db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+	"build": "rm ./lib/* && tsc"
+  },
   "keywords": [],
   "author": "Stasium#0001, Host#00001",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
     "better-sqlite3": "^5.4.3"
   },
   "devDependencies": {
-    "@types/better-sqlite3": "^5.4.0"
+    "@types/better-sqlite3": "^5.4.0",
+    "@types/node": "^12.12.17",
+	"typescript": "^3.7.3"
   }
 }

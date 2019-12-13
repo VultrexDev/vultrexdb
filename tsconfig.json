@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2018",
+        "outDir": "lib",
+        "lib": [
+            "esnext",
+			"esnext.array",
+			"esnext.asynciterable",
+			"esnext.intl",
+            "esnext.symbol",
+            "DOM"
+        ],
+		"sourceMap": false,
+		"inlineSourceMap": true,
+        "inlineSources": true,
+        "incremental": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
