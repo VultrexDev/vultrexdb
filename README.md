@@ -15,7 +15,7 @@ Not working? Run the following command in your Terminal or Windows PowerShell:
 #### Defining without Options
 
 ```javascript
-const VultrexDB = require("vultrexdb");
+const { VultrexDB } = require("vultrexdb");
 
 const db = new VultrexDB();
 ```
@@ -52,20 +52,38 @@ Optionally, you can return a default value if none exists in the database:
 return db.get("key", "defaultValue");
 ```
 
+#### Return all values from a table:
+
+```javascript
+return db.getAll();
+```
+
+#### Check if key has a value:
+
+```javascript
+return db.has("key");
+```
+
 #### Set a value with a provided key:
 
 ```javascript
-db.set("key", "newValue");
+return db.set("key", "newValue");
 ```
 
 #### Remove a provided key:
 
 ```javascript
-db.remove("key");
+return db.remove("key");
 ```
 
 #### Destroy the entire table (WARNING: you will lose all data from doing this):
 
 ```javascript
-db.clear();
+return db.clear();
+```
+
+#### Check how many records a table has
+
+```javascript
+return db.size;
 ```
