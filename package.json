@@ -4,7 +4,7 @@
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-  "build": "rm ./lib/* && tsc"
+    "build": "rm ./lib/* && tsc"
   },
   "types": "types/index.d.ts",
   "keywords": [],
