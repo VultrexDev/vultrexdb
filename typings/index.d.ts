@@ -50,7 +50,7 @@ declare module "vultrex.db" {
 		 * 
 		 * @returns {T}
 		 */
-		public get<T>(key: String | Number, defaultValue: any): T;
+		public get<T>(key: String | Number, defaultValue?: any): T;
 
 		/**
 		 * 
