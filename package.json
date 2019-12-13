@@ -4,11 +4,11 @@
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-	"build": "rm ./lib/* && tsc"
+    "build": "rm ./lib/* && tsc"
   },
   "keywords": [],
   "author": "Stasium#0001, Host#00001",
-  "license": "ISC",
+  "license": "MIT",
   "files": [
     "lib"
   ],
@@ -18,6 +18,6 @@
   "devDependencies": {
     "@types/better-sqlite3": "^5.4.0",
     "@types/node": "^12.12.17",
-	"typescript": "^3.7.3"
+    "typescript": "^3.7.3"
   }
 }

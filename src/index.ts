@@ -2,43 +2,45 @@ import sqlite, { Database, RunResult } from "better-sqlite3"
 import VultrexError from "./VultrexError";
 
 interface VultrexDBOptions {
-	name: string
-	verbose?: () => void
-	timeout?: number
-	fileMustExist?: boolean
+	name?: string;
+	verbose?: () => void;
+	timeout?: number;
+	fileMustExist?: boolean;
+	wal?: boolean;
 }
 
-interface DBEntry {
-	key: string | number
-	value: any
+interface Row {
+	key: string | number;
+	value: any;
 }
 
 export class VultrexDB {
-
-	private readonly table: String;
+	private readonly table: string;
+	private readonly wal: boolean;
 	private readonly db: Database;
-
 	public constructor(options: VultrexDBOptions) {
-		this.table = options.name
+		this.table = options.name || "vultrexdb";
+		this.wal = options.wal || true;
 		this.db = new sqlite("./vultrex.db", {
 			verbose: options.verbose || null,
 			fileMustExist: options.fileMustExist || false,
 			timeout: options.timeout || 5000
 		});
-
 		this._init();
 	}
 
 	private _init() {
 		this.db.prepare(`CREATE TABLE IF NOT EXISTS '${this.table}' (key TEXT PRIMARY KEY, value TEXT)`).run();
-		this.db.pragma("synchronous = 1");
-		this.db.pragma("journal_mode = wal");
+		if (this.wal) {
+			this.db.pragma("synchronous = 1");
+			this.db.pragma("journal_mode = wal");
+		}
 	}
 
 	/**
 	* Store the value with the given key inside of a database
-	* @param {string | number} key Required.
-	* @param {any} value
+	* @param key Required.
+	* @param value
 	* 
 	* @example
 	* const VultrexDB = require("vultrexdb");
@@ -47,10 +49,8 @@ export class VultrexDB {
 	*
 	*
 	* @ The above code would set an array of VIP users in the "vips" key
-	* 
-	* @returns {RunResult}
 	*/
-	public set(key: String | Number, value: any): RunResult {
+	public set(key: string | number, value: any): RunResult {
 		if (!key || !["String", "Number"].includes(key.constructor.name)) {
 			throw new VultrexError("Vultrex DB requires String or Number as Key.", "VultrexKeyTypeError");
 		}
@@ -59,8 +59,8 @@ export class VultrexDB {
 
 	/**
 	* Return the value for the given key or fall back to the default value from the database
-	* @param key {string | number}
-	* @param defaultValue {any}
+	* @param key
+	* @param defaultValue
 	* 
 	* @example
 	* const VultrexDB = require("vultrex.db");
@@ -69,10 +69,8 @@ export class VultrexDB {
 	* 
 	* 
 	* @ The above code would `return: ["264378908756017154"]` (an array of VIP users) or an empty array
-	*
-	* @returns {T}
 	*/
-	public get<T>(key: String | Number, defaultValue: any = null): T {
+	public get<T>(key: string | number, defaultValue: any = null): T {
 		if (!key || !["String", "Number"].includes(key.constructor.name)) {
 			throw new VultrexError("Vultrex DB requires String or Number as Key.", "VultrexKeyTypeError");
 		}
@@ -82,11 +80,9 @@ export class VultrexDB {
 
 	/**
 	* 
-	* @param key 
-	* 
-	* @returns {boolean}
+	* @param key
 	*/
-	public has(key: String | Number): boolean {
+	public has(key: string | number): boolean {
 		if (!key || !["String", "Number"].includes(key.constructor.name)) {
 			throw new VultrexError("Vultrex DB requires String or Number as Key.", "VultrexKeyTypeError");
 		}
@@ -103,10 +99,8 @@ export class VultrexDB {
 	*
 	*
 	* @ The above code would return: [ {key: "test", value: "test data"} ] (an array of database objects)
-	* 
-	* @returns {getAll[]}
 	*/
-	public getAll(): DBEntry[] {
+	public getAll(): Row[] {
 		const data = this.db.prepare(`SELECT * FROM '${this.table}';`).all();
 		return data.map(row => ({ key: row.key, value: JSON.parse(row.value) }));
 	}
@@ -122,10 +116,8 @@ export class VultrexDB {
 	* 
 	*
 	* @ The above code would delete all the VIP users from the database
-	* 
-	* @returns {RunResult}
 	*/
-	public remove(key: String | Number): RunResult {
+	public remove(key: string | number): RunResult {
 		if (!key || !["String", "Number"].includes(key.constructor.name)) {
 			throw new VultrexError("VultrexDB requires String or Number as Key.", "VultrexKeyTypeError");
 		}
@@ -142,8 +134,6 @@ export class VultrexDB {
 	* 
 	*
 	* @ The above code would reset the table.
-	* 
-	* @returns {void}
 	*/
 	public clear(): void {
 		this.db.prepare(`DROP TABLE '${this.table}';`).run();
@@ -152,8 +142,6 @@ export class VultrexDB {
 
 	/**
 	* Gets the size of the table.
-	* 
-	* @returns {number}
 	*/
 	public get size(): number {
 		const data = this.db.prepare(`SELECT count(*) FROM '${this.table}';`).get();
