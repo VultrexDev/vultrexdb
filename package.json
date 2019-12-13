@@ -1,6 +1,6 @@
 {
   "name": "vultrex.db",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": "lib/index.js",
   "types": "index.d.ts",
@@ -11,7 +11,8 @@
   "author": "Stasium#0001, Host#00001",
   "license": "ISC",
   "files": [
-    "lib"
+    "lib",
+    "index.d.ts"
   ],
   "dependencies": {
     "better-sqlite3": "^5.4.3"
