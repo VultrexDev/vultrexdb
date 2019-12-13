@@ -33,7 +33,7 @@ const db = new VultrexDB();
 name (string) - This is the name of your database table
 timeout (number) - This is the number (in milliseconds) to wait before executing queries on a locked database before throwing an error
 fileMustExist (boolean) - When set to true, if the file does not exist then an error will be thrown
-verbose (function) - Provide a function which is used on every SQL string executed by the database
+verbose (function) - Provide a function which is used on every SQL string executed by the Database
 ```
 
 #### JavaScript Defining with Options
@@ -70,8 +70,8 @@ return db.get("key");
 ```typescript
 return db.get<string>("key");
 ```
-
-Optionally, you can return a default value if none exists in the database:
+For TypeScript replace the type "string" with the type you want to get from the Database
+Optionally, you can return a default value if none exists in the Database:
 
 ```javascript
 return db.get("key", "defaultValue");
