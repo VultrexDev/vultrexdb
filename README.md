@@ -71,6 +71,7 @@ return db.get("key");
 return db.get<string>("key");
 ```
 For TypeScript replace the type "string" with the type you want to get from the Database
+
 Optionally, you can return a default value if none exists in the Database:
 
 ```javascript
