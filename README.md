@@ -30,7 +30,7 @@ verbose (function) - Provide a function which is used on every SQL string execut
 
 #### Defining with Options
 ```javascript
-const { VultrexDB } = require("vultrexdb");
+const { VultrexDB } = require("vultrex.db");
 
 const db = new VultrexDB({
   name: "yourDatabaseName",
