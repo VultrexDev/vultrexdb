@@ -36,7 +36,7 @@ fileMustExist (boolean) - When set to true, if the file does not exist then an e
 verbose (function) - Provide a function which is used on every SQL string executed by the database
 ```
 
-#### Defining with Options
+#### JavaScript Defining with Options
 ```javascript
 const { VultrexDB } = require("vultrex.db");
 
@@ -48,10 +48,27 @@ const db = new VultrexDB({
 });
 ```
 
-#### Return a value from a provided key:
+#### TypeScript Defining with Options
+```typescript
+import { VultrexDB } from "vultrex.db";
 
+const db = new VultrexDB({
+  name: "yourDatabaseName",
+  timeout: 5000,
+  fileMustExist: false,
+  verbose: null 
+});
+```
+
+#### Return a value from a provided key:
+### JavaScript
 ```javascript
 return db.get("key");
+```
+
+### TypeScript
+```typescript
+return db.get<string>("key");
 ```
 
 Optionally, you can return a default value if none exists in the database:
