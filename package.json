@@ -9,6 +9,9 @@
   "keywords": [],
   "author": "Stasium#0001, Host#00001",
   "license": "ISC",
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "better-sqlite3": "^5.4.3"
   },

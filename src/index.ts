@@ -72,7 +72,7 @@ export class VultrexDB {
 	*
 	* @returns {T}
 	*/
-	public get<T>(key: String | Number, defaultValue: any): T {
+	public get<T>(key: String | Number, defaultValue: any = null): T {
 		if (!key || !["String", "Number"].includes(key.constructor.name)) {
 			throw new VultrexError("Vultrex DB requires String or Number as Key.", "VultrexKeyTypeError");
 		}
