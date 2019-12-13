@@ -1,9 +1,9 @@
 {
   "name": "vultrex.db",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "",
   "main": "lib/index.js",
-  "types": "index.d.ts",
+  "types": "typings/index.d.ts",
   "scripts": {
     "build": "rm ./lib/* && tsc"
   },
@@ -12,7 +12,7 @@
   "license": "ISC",
   "files": [
     "lib",
-    "index.d.ts"
+    "typings"
   ],
   "dependencies": {
     "better-sqlite3": "^5.4.3"
