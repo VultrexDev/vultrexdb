@@ -1,14 +1,14 @@
 import { RunResult, Database } from "better-sqlite3"
 
 declare module "vultrex.db" {
-	type VultrexDBOptions = {
+	interface VultrexDBOptions {
 		name: string
 		verbose?: () => void
 		timeout?: number
 		fileMustExist?: boolean
 	}
 
-	type DBEntry = {
+	interface DBEntry {
 		key: string | number
 		value: any
 	}
