@@ -9,7 +9,7 @@
   },
   "keywords": [],
   "author": "Stasium#0001, Host#00001",
-  "license": "MIT",
+  "license": "ISC",
   "files": [
     "lib",
     "typings"
