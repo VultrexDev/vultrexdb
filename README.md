@@ -25,6 +25,7 @@ timeout: number = This is the number (in milliseconds) to wait before executing 
 fileMustExist: boolean = When set to true, if the file does not exist then an error will be thrown. (Default: false)
 verbose: function = Provide a function which is used on every SQL string executed by the database. (Default: null)
 wal: boolean = (Default: true)
+fileName: string = Default: 'vultrex'
 */
 const db = new VultrexDB({
   name: "yourDatabaseName",
