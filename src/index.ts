@@ -112,44 +112,50 @@ export class VultrexDB {
 		return data.map(row => ({ key: row.key, value: JSON.parse(row.value) }));
 	}
 
-	/**
-	* Remove a specific key from the database
-	* @param key 
-	* 
-	* @example
-	* const VultrexDB = require("vultrex.db");
-	* const db = new VultrexDB({ name: "myDB" });
-	* db.remove("vips");
-	* 
-	*
-	* @ The above code would delete all the VIP users from the database
-	*/
-	public remove(key: string | number): RunResult {
+	 /**
+	 * Remove a specific key from the database
+	 * @param key 
+	 * 
+	 * @example
+	 * const VultrexDB = require("vultrex.db");
+	 * const db = new VultrexDB({ name: "myDB" });
+	 * db.remove("vips");
+	 * 
+	 *
+	 * @ The above code would delete all the VIP users from the database
+	 * 
+	 * @returns {RunResult}
+	 */
+	public remove(key: String | Number): RunResult {
 		if (!key || !["String", "Number"].includes(key.constructor.name)) {
 			throw new VultrexError("VultrexDB requires String or Number as Key.", "VultrexKeyTypeError");
 		}
 		return this.db.prepare(`DELETE FROM '${this.table}' WHERE key = ?;`).run(key);
 	}
 
-	/**
-	* Deletes all data from the table
-	* 
-	* @example
-	* const VultrexDB = require("vultrex.db");
-	* const db = new VultrexDB({ name: "myDB" });
-	* db.clear();
-	* 
-	*
-	* @ The above code would reset the table.
-	*/
+	 /**
+	 * Deletes all data from the table
+	 * 
+	 * @example
+	 * const VultrexDB = require("vultrex.db");
+	 * const db = new VultrexDB({ name: "myDB" });
+	 * db.clear();
+	 * 
+	 *
+	 * @ The above code would reset the table.
+	 * 
+	 * @returns {void}
+	 */
 	public clear(): void {
 		this.db.prepare(`DROP TABLE '${this.table}';`).run();
 		this._init();
 	}
 
-	/**
-	* Gets the size of the table.
-	*/
+	 /**
+	 * Gets the size of the table.
+	 * 
+	 * @returns {number}
+	 */
 	public get size(): number {
 		const data = this.db.prepare(`SELECT count(*) FROM '${this.table}';`).get();
 		return data["count(*)"];

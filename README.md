@@ -15,7 +15,7 @@ Not working? Run the following command in your Terminal or Windows PowerShell:
 ## Example Usage
 
 ```javascript
-const { VultrexDB } = require("vultrexdb");
+const { VultrexDB } = require("vultrex.db");
 
 const db = new VultrexDB();
 

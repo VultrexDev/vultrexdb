@@ -1,8 +1,9 @@
 {
   "name": "vultrex.db",
-  "version": "1.0.0",
+  "version": "1.0.10",
   "description": "",
   "main": "lib/index.js",
+  "types": "typings/index.d.ts",
   "scripts": {
     "build": "rm ./lib/* && tsc"
   },
@@ -10,7 +11,8 @@
   "author": "Stasium#0001, Host#00001",
   "license": "MIT",
   "files": [
-    "lib"
+    "lib",
+    "typings"
   ],
   "dependencies": {
     "better-sqlite3": "^5.4.3"
