@@ -1,4 +1,4 @@
-import sqlite, { Database, RunResult } from "better-sqlite3"
+import SQLite, { Database, RunResult } from "better-sqlite3"
 import VultrexError from "./VultrexError";
 
 interface VultrexDBOptions {
@@ -7,6 +7,7 @@ interface VultrexDBOptions {
 	timeout?: number;
 	fileMustExist?: boolean;
 	wal?: boolean;
+	fileName?: string;
 }
 
 interface Row {
@@ -14,14 +15,19 @@ interface Row {
 	value: any;
 }
 
+/**
+ * The main instance. Creates a new database table.
+ */
 export class VultrexDB {
 	private readonly table: string;
 	private readonly wal: boolean;
 	private readonly db: Database;
+	private readonly fileName: string;
 	public constructor(options: VultrexDBOptions) {
 		this.table = options.name || "vultrexdb";
 		this.wal = options.wal || true;
-		this.db = new sqlite("./vultrex.db", {
+		this.fileName = `${options.fileName}.db` || "./vultrex.db";
+		this.db = new SQLite(this.fileName, {
 			verbose: options.verbose || null,
 			fileMustExist: options.fileMustExist || false,
 			timeout: options.timeout || 5000
@@ -41,14 +47,13 @@ export class VultrexDB {
 	* Store the value with the given key inside of a database
 	* @param key Required.
 	* @param value
-	* 
-	* @example
+	* ```javascript
 	* const VultrexDB = require("vultrexdb");
 	* const db = new VultrexDB({ name: "myDB" });
+	*
 	* db.set("vips", ["264378908756017154"]);
-	*
-	*
 	* @ The above code would set an array of VIP users in the "vips" key
+	* ```
 	*/
 	public set(key: string | number, value: any): RunResult {
 		if (!key || !["String", "Number"].includes(key.constructor.name)) {
@@ -60,15 +65,15 @@ export class VultrexDB {
 	/**
 	* Return the value for the given key or fall back to the default value from the database
 	* @param key
-	* @param defaultValue
+	* @param [defaultValue]
 	* 
-	* @example
+	* ```javascript
 	* const VultrexDB = require("vultrex.db");
 	* const db = new VultrexDB({ name: "myDB" });
 	* db.get("vips", []);
-	* 
-	* 
+	*
 	* @ The above code would `return: ["264378908756017154"]` (an array of VIP users) or an empty array
+	* ```
 	*/
 	public get<T>(key: string | number, defaultValue: any = null): T {
 		if (!key || !["String", "Number"].includes(key.constructor.name)) {
@@ -92,13 +97,15 @@ export class VultrexDB {
 	/**
 	* Returns an Array with all Data from the Database
 	* 
-	* @example
+	* ``javascript
 	* const VultrexDB = require("vultrex.db");
 	* const db = new VultrexDB({ name: "myDB" });
 	* db.getAll();
 	*
 	*
 	* @ The above code would return: [ {key: "test", value: "test data"} ] (an array of database objects)
+	* ```
+	@return
 	*/
 	public getAll(): Row[] {
 		const data = this.db.prepare(`SELECT * FROM '${this.table}';`).all();
