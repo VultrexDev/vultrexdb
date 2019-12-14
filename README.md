@@ -1,6 +1,6 @@
 # Vultrex DB
 
-A simple SQLite Database Wrapper developed for novices in JavaScript and SQL - Developed with love by Stasium#0001
+A simple SQLite database framework designed with simplicity in mind. Developed with <3 by Stasium#0001.
 
 ## Installation
 
@@ -10,7 +10,9 @@ npm i vultrex/vultrexdb
   
 Not working? Run the following command in your Terminal or Windows PowerShell:
 
-`npm i -g --add-python-to-path --vs2015 --production windows-build-tools`
+```bash
+npm i -g --add-python-to-path --vs2015 --production windows-build-tools
+```
 
 ## Example Usage
 
@@ -57,3 +59,9 @@ db.clear();
 // Check how many entries the database has
 db.size;
 ```
+
+## Links
+
+- [Website](https://vultrex.org)
+- [Discord](https://discordapp.com/invite/)
+- [YouTube](https://www.youtube.com/channel/UCo8AwaskLR7FROYwbqSCuSw)
