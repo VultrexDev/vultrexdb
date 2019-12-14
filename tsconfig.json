@@ -3,22 +3,19 @@
         "module": "commonjs",
         "target": "ES6",
         "outDir": "lib",
+        "rootDir": "src",
         "lib": [
             "esnext",
 			"esnext.array",
 			"esnext.asynciterable",
 			"esnext.intl",
-            "esnext.symbol",
-            "DOM"
+            "esnext.symbol"
         ],
-        "sourceMap": false,
         "declaration": true,
-		"inlineSourceMap": true,
-        "inlineSources": true,
         "incremental": true,
         "esModuleInterop": true,
         "experimentalDecorators": true,
-        "emitDecoratorMetadata": true
+        "strict": true
     },
     "include": [
         "src/**/*"

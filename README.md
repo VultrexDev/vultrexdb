@@ -62,6 +62,6 @@ db.size;
 
 ## Links
 
-- [Website](https://vultrex.org)
+- [Website](https://vultrex.org/discord)
 - [Discord](https://discordapp.com/invite/)
 - [YouTube](https://www.youtube.com/channel/UCo8AwaskLR7FROYwbqSCuSw)
