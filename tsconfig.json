@@ -11,7 +11,8 @@
             "esnext.symbol",
             "DOM"
         ],
-		"sourceMap": false,
+        "sourceMap": false,
+        "declaration": true,
 		"inlineSourceMap": true,
         "inlineSources": true,
         "incremental": true,
