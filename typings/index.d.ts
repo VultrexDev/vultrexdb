@@ -2,20 +2,25 @@ import { RunResult, Database } from "better-sqlite3"
 
 declare module "vultrex.db" {
 	interface VultrexDBOptions {
-		name: string
-		verbose?: () => void
-		timeout?: number
-		fileMustExist?: boolean
+		name?: string;
+		verbose?: () => void;
+		timeout?: number;
+		fileMustExist?: boolean;
+		wal?: boolean;
+		fileName?: string;
 	}
 
-	interface DBEntry {
-		key: string | number
-		value: any
+	interface Row {
+		key: string | number;
+		value: any;
 	}
 
 	export class VultrexDB {
+
 		private readonly table: string;
+		private readonly wal: boolean;
 		private readonly db: Database;
+		private readonly fileName: string;
 
 		constructor(options: VultrexDBOptions);
 
@@ -89,7 +94,7 @@ declare module "vultrex.db" {
 		 * 
 		 * @returns {getAll[]}
 		 */
-		public getAll(): DBEntry[];
+		public getAll(): Row[];
 
 		/**
 		 * Deletes all data from the table

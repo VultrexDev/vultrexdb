@@ -1,26 +1,26 @@
-{
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "ES6",
-        "outDir": "lib",
-        "rootDir": "src",
-        "lib": [
-            "esnext",
-			"esnext.array",
-			"esnext.asynciterable",
-			"esnext.intl",
-            "esnext.symbol"
-        ],
-        "declaration": true,
-        "incremental": true,
-        "esModuleInterop": true,
-        "experimentalDecorators": true,
-        "strict": true
-    },
-    "include": [
-        "src/**/*"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+{ 
+   "compilerOptions":{ 
+      "module":"commonjs",
+      "target":"ES6",
+      "outDir":"lib",
+      "rootDir":"src",
+      "lib":[ 
+         "esnext",
+         "esnext.array",
+         "esnext.asynciterable",
+         "esnext.intl",
+         "esnext.symbol"
+      ],
+      "declaration":true,
+      "incremental":true,
+      "esModuleInterop":true,
+      "experimentalDecorators":true,
+      "strict":true
+   },
+   "include":[ 
+      "src/**/*"
+   ],
+   "exclude":[ 
+      "node_modules"
+   ]
 }
