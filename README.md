@@ -1,3 +1,9 @@
+<div align="center">
+  <p>
+    <a href="https://discord.gg/WeftAFp"><img src="https://cdn.discordapp.com/icons/638036514214772737/a_015b4cbc6029c412662643874866e901.png" alt="Discord server" /></a>
+  </p>
+</div>
+
 # Vultrex DB
 
 A simple SQLite database framework designed with simplicity in mind. Developed with <3 by Stasium#0001.
