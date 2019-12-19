@@ -63,5 +63,5 @@ db.size;
 ## Links
 
 - [Website](https://vultrex.org/)
-- [Discord](https://discordapp.com/invite/WeftAFp)
+- [Discord](https://discordapp.com/invite/vultrex)
 - [YouTube](https://www.youtube.com/channel/UCo8AwaskLR7FROYwbqSCuSw)
