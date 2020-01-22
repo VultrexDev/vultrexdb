@@ -114,6 +114,10 @@ export class VultrexDB {
 		const data = this.db.prepare(`SELECT * FROM '${this.table}';`).all();
 		return data.map(row => ({ key: row.key, value: JSON.parse(row.value) }));
 	}
+	
+	public all(): Row[] {
+                return this.getAll();
+	}
 
 	/**
 	* Remove a specific key from the database
@@ -135,6 +139,10 @@ export class VultrexDB {
 			throw new VultrexError("VultrexDB requires String or Number as Key.", "VultrexKeyTypeError");
 		}
 		return this.db.prepare(`DELETE FROM '${this.table}' WHERE key = ?;`).run(key);
+	}
+	
+	public delete(key: string | number): RunResult {
+                return this.remove(key);
 	}
 
 	/**
