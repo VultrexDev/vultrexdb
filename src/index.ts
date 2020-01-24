@@ -30,7 +30,7 @@ export class VultrexDB {
 		this.wal = options.wal || true;
 		this.fileName = `${options.fileName}.db` || "./vultrex.db";
 		this.db = new SQLite(this.fileName, {
-			verbose: options.verbose || null,
+			verbose: options.verbose,
 			fileMustExist: options.fileMustExist || false,
 			timeout: options.timeout || 5000
 		});
