@@ -51,7 +51,7 @@ export class VultrexDB {
 	* @param value
 	*
 	* ```javascript
-	* const VultrexDB = require("vultrexdb");
+	* const { VultrexDB } = require("vultrexdb");
 	* const db = new VultrexDB({ name: "myDB" });
 	*
 	* db.set("vips", ["264378908756017154"]);
@@ -71,7 +71,7 @@ export class VultrexDB {
 	* @param [defaultValue]
 	* 
 	* @example
-	* const VultrexDB = require("vultrex.db");
+	* const { VultrexDB } = require("vultrex.db");
 	* const db = new VultrexDB({ name: "myDB" });
 	* db.get("vips", []);
 	*
@@ -101,7 +101,7 @@ export class VultrexDB {
 	* Returns an Array with all Data from the Database
 	* 
 	* ```javascript
-	* const VultrexDB = require("vultrex.db");
+	* const { VultrexDB } = require("vultrex.db");
 	* const db = new VultrexDB({ name: "myDB" });
 	* db.getAll();
 	*
@@ -121,7 +121,7 @@ export class VultrexDB {
 	* 
 	* 
 	* ```javascript
-	* const VultrexDB = require("vultrex.db");
+	* const { VultrexDB } = require("vultrex.db");
 	* const db = new VultrexDB({ name: "myDB" });
 	* db.remove("vips");
 	* ```
@@ -141,7 +141,7 @@ export class VultrexDB {
 	* Deletes all data from the table
 	* 
 	* @example
-	* const VultrexDB = require("vultrex.db");
+	* const { VultrexDB } = require("vultrex.db");
 	* const db = new VultrexDB({ name: "myDB" });
 	* db.clear();
 	* 
