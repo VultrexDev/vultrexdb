@@ -3,6 +3,7 @@ import { SQLiteProviderOptions } from "../interfaces/SQLiteProviderOptions";
 import { RowData } from "../interfaces/RowData";
 
 export class SQLiteProvider {
+
 	private db: Database;
 
 	private tableName: string;
@@ -37,9 +38,9 @@ export class SQLiteProvider {
 		return data.map(data => ({ key: data["key"], value: JSON.parse(data["value"]) }));
 	}
 
-	public async size(): Promise<number> {
-		const data = await this.db.run(`SELECT COUNT(*) FROM '${this.tableName}';`);
-		return data["COUNT(*)"];
+	public async size(): Promise<any> {
+		const data = await this.db.get(`SELECT count(*) FROM '${this.tableName}';`);
+		return data["count(*)"];
 	}
 
 	public async delete(key: string | number): Promise<void> {

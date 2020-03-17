@@ -10,7 +10,7 @@
   "scripts": {
     "build": "tsc"
   },
-  "author": "Vultrex Development - Stasium#0001",
+  "author": "Vultrex Development",
   "license": "ISC",
   "files": [
     "lib",
