@@ -162,7 +162,7 @@
         "signature": "1711ce1fdbac00d2a34f1dbb33b33933096563362c195c76e3712fece421b257"
       },
       "../src/providers/SQLiteProvider.ts": {
-        "version": "ecd233fbc09987bcec15843d873c519fe3a7b59b34f67d62be0d32503bf07c39",
+        "version": "8db4dc15155a15f2f39a1e82c6f61dca721cdfad783c76ca46189cf289ae276d",
         "signature": "2a75c7dc07091f578ee9f1a0317fcb0246449ca4f4d8e8cd9865fbd749c52a40"
       },
       "../node_modules/@types/node/globals.d.ts": {

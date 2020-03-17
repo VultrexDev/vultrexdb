@@ -26,11 +26,8 @@ export class SQLiteProvider {
 	}
 
 	public async get<T>(key: string | number, defaultValue: any): Promise<T> {
-		const data = await this.db.get(`SELECT * FROM '${this.tableName}';`);
-		if (data !== null) {
-			return JSON.parse(data["value"]);
-		}
-		return defaultValue;
+		const data = await this.db.get(`SELECT * FROM '${this.tableName}' WHERE key = ?;`, key);
+		return data ? JSON.parse(data["value"]) : defaultValue;
 	}
 
 	public async getAll(): Promise<RowData[]> {
