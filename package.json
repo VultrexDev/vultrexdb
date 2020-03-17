@@ -1,25 +1,28 @@
 {
-  "name": "vultrex.db",
-  "version": "1.0.10",
-  "description": "",
+  "name": "vultrexdbv2",
+  "version": "1.0.0",
+  "description": "A simple key value wrapper made for the community of Vultrex Development",
   "main": "lib/index.js",
-  "types": "typings/index.d.ts",
-  "scripts": {
-    "build": "rm typings lib && tsc"
+  "typings": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
   },
-  "keywords": [],
-  "author": "Stasium#0001, Host#00001",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Vultrex Development",
   "license": "ISC",
   "files": [
     "lib",
     "typings"
   ],
-  "dependencies": {
-    "better-sqlite3": "^5.4.3"
+  "peerDependencies": {
+    "sqlite": "^3.0.3",
+    "mongodb": "^3.5.5"
   },
   "devDependencies": {
-    "@types/better-sqlite3": "^5.4.0",
-    "@types/node": "^12.12.17",
-    "typescript": "^3.7.3"
+    "@types/mongodb": "^3.5.2"
+  },
+  "dependencies": {
   }
 }

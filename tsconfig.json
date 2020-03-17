@@ -1,28 +1,27 @@
 {
     "compilerOptions": {
         "module": "commonjs",
-        "target": "ES6",
+        "target": "es2018",
         "outDir": "lib",
-        "rootDir": "src",
         "lib": [
             "esnext",
-            "esnext.array",
-            "esnext.asynciterable",
-            "esnext.intl",
-            "esnext.symbol"
+			"esnext.array",
+			"esnext.asynciterable",
+			"esnext.intl",
+			"esnext.symbol"
         ],
-        "declaration": true,
-        "declarationDir": "typings",
+		"sourceMap": false,
+		"inlineSourceMap": true,
+        "inlineSources": true,
         "incremental": true,
         "esModuleInterop": true,
         "experimentalDecorators": true,
-        "strict": true
+        "emitDecoratorMetadata": true
     },
     "include": [
         "src/**/*"
     ],
     "exclude": [
-        "node_modules",
-        "README.md"
+        "node_modules"
     ]
 }
