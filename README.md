@@ -7,12 +7,12 @@ A simple SQLite / MongoDB Database Wrapper developed for novices in JavaScript a
 npm i vultrex/vultrexdb
 ```  
 
-# SQLite Installation
+### SQLite Installation
 ```bash
 npm i sqlite
 ```
 
-# MongoDB Installation
+### MongoDB Installation
 ```bash
 npm i mongodb
 ```
