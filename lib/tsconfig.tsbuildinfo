@@ -366,8 +366,8 @@
         "signature": "46b4a9044d0e74047b6464d1a122c163d4a84c8a4860ffc47d851977e0bcc96b"
       },
       "../src/index.ts": {
-        "version": "d1f5d1f004db4abaf17f22760ccaca7b26df4d897b3a5d204721b83388969110",
-        "signature": "cba58562f7bb2de5959baddf07cc6809c5b61903a7f1b7ceaa3bca4116bff4ce"
+        "version": "973a591660046bbb1dd2a84f3552f8268f5a43c300a169aeb6e275c637151cc1",
+        "signature": "8ec8a73a73b7207824349de68a1687eb35df380d70725e64a064d6dd56b97b08"
       }
     },
     "options": {
@@ -1046,8 +1046,6 @@
       ],
       "../src/index.ts": [
         "../src/VultrexDB/VultrexDB.ts",
-        "../src/providers/MongoDBProvider.ts",
-        "../src/providers/SQLiteProvider.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -1055,23 +1053,221 @@
       ]
     },
     "exportedModulesMap": {
-      "../src/providers/SQLiteProvider.ts": [
-        "../src/interfaces/SQLiteProviderOptions.ts",
-        "../src/interfaces/RowData.ts"
+      "../../../usr/lib/node_modules/typescript/lib/lib.es5.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/providers/MongoDBProvider.ts": [
-        "../src/interfaces/MongoDBProviderOptions.ts",
-        "../src/interfaces/RowData.ts"
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/VultrexDB/VultrexDB.ts": [
-        "../src/interfaces/RowData.ts",
-        "../src/providers/SQLiteProvider.ts",
-        "../src/providers/MongoDBProvider.ts"
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2016.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/index.ts": [
-        "../src/VultrexDB/VultrexDB.ts",
-        "../src/providers/MongoDBProvider.ts",
-        "../src/providers/SQLiteProvider.ts"
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2017.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2018.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2019.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2020.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.esnext.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.core.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.collection.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.generator.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.iterable.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.promise.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.proxy.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.reflect.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.symbol.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2016.array.include.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2017.object.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2017.string.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2017.intl.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2018.intl.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2018.promise.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2018.regexp.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2019.array.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2019.object.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2019.string.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2019.symbol.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2020.string.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.esnext.intl.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../usr/lib/node_modules/typescript/lib/lib.esnext.bigint.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../node_modules/sql-template-strings/index.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
@@ -1085,6 +1281,22 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/providers/SQLiteProvider.ts": [
+        "../src/interfaces/SQLiteProviderOptions.ts",
+        "../src/interfaces/RowData.ts"
+      ],
+      "../src/VultrexDB/VultrexDB.ts": [
+        "../src/interfaces/RowData.ts",
+        "../src/providers/SQLiteProvider.ts",
+        "../src/providers/MongoDBProvider.ts"
+      ],
+      "../src/index.ts": [
+        "../src/VultrexDB/VultrexDB.ts"
+      ],
+      "../src/providers/MongoDBProvider.ts": [
+        "../src/interfaces/MongoDBProviderOptions.ts",
+        "../src/interfaces/RowData.ts"
       ],
       "../node_modules/@types/node/globals.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
@@ -1466,47 +1678,11 @@
       ]
     },
     "semanticDiagnosticsPerFile": [
-      "../../../usr/lib/node_modules/typescript/lib/lib.es5.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2016.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2017.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2018.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2019.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2020.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.esnext.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.core.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.collection.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.generator.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.iterable.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.promise.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.proxy.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.reflect.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.symbol.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2016.array.include.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2017.object.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2017.string.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2017.intl.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2018.intl.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2018.promise.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2018.regexp.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2019.array.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2019.object.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2019.string.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2019.symbol.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2020.string.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.esnext.intl.d.ts",
-      "../../../usr/lib/node_modules/typescript/lib/lib.esnext.bigint.d.ts",
       "../node_modules/sql-template-strings/index.d.ts",
       "../node_modules/sqlite/main.d.ts",
-      "../src/providers/SQLiteProvider.ts",
       "../src/interfaces/SQLiteProviderOptions.ts",
       "../src/interfaces/RowData.ts",
+      "../src/providers/SQLiteProvider.ts",
       "../node_modules/@types/node/globals.d.ts",
       "../node_modules/@types/node/assert.d.ts",
       "../node_modules/@types/node/async_hooks.d.ts",
@@ -1557,7 +1733,43 @@
       "../src/interfaces/MongoDBProviderOptions.ts",
       "../src/providers/MongoDBProvider.ts",
       "../src/VultrexDB/VultrexDB.ts",
-      "../src/index.ts"
+      "../src/index.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2016.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2017.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2018.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2019.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2020.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.esnext.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.esnext.bigint.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.esnext.intl.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2020.string.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2019.symbol.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2019.string.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2019.object.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2019.array.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2018.regexp.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2018.promise.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2018.intl.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2017.intl.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2017.string.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2017.object.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2016.array.include.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.symbol.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.reflect.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.proxy.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.promise.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.iterable.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.generator.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.collection.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es2015.core.d.ts",
+      "../../../usr/lib/node_modules/typescript/lib/lib.es5.d.ts"
     ]
   },
   "version": "3.7.5"

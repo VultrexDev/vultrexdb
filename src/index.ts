@@ -1,5 +1,14 @@
 import { VultrexDB } from "./VultrexDB/VultrexDB";
-import { MongoDBProvider } from "./providers/MongoDBProvider";
-import { SQLiteProvider } from "./providers/SQLiteProvider";
+
+let SQLiteProvider = null;
+let MongoDBProvider = null;
+
+try {
+	MongoDBProvider = { MongoDBProvider } = require("./providers/MongoDBProvider");
+} catch {}
+
+try {
+	SQLiteProvider = { SQLiteProvider } = require("./providers/SQLiteProvider");
+} catch {}
 
 export { VultrexDB, MongoDBProvider, SQLiteProvider };

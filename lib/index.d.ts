@@ -1,4 +1,4 @@
 import { VultrexDB } from "./VultrexDB/VultrexDB";
-import { MongoDBProvider } from "./providers/MongoDBProvider";
-import { SQLiteProvider } from "./providers/SQLiteProvider";
+declare let SQLiteProvider: any;
+declare let MongoDBProvider: any;
 export { VultrexDB, MongoDBProvider, SQLiteProvider };
