@@ -1,5 +1,5 @@
 {
-  "name": "vultrexdbv2",
+  "name": "vultrex.db",
   "version": "1.0.0",
   "description": "A simple key value wrapper made for the community of Vultrex Development",
   "main": "lib/index.js",
