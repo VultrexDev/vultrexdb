@@ -17,7 +17,7 @@ npm i sqlite
 npm i mongodb
 ```
  
-#### Basic Documentation
+### Basic Documentation
 ```javascript
 const { VultrexDB, SQLiteProvider, MongoDBProvider } = require("vultrex.db");
 
