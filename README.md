@@ -1,71 +1,53 @@
 # Vultrex DB
 
-A simple SQLite Database Wrapper developed for novices in JavaScript and SQL - Developed with love by Stasium#0001
+A simple SQLite / MongoDB Database Wrapper developed for novices in JavaScript and SQL - Developed with <3 by Stasium#0001, Documentation by Host#0001
 
 ## Installation
-
 ```bash
 npm i vultrex/vultrexdb
 ```  
-  
-Not working? Run the following command in your Terminal or Windows PowerShell:
 
-`npm i -g --add-python-to-path --vs2015 --production windows-build-tools`
+# SQLite Installation
+```bash
+npm i sqlite
+```
 
-#### Defining without Options
-
+# MongoDB Installation
+```bash
+npm i mongodb
+```
+ 
+#### Basic Documentation
 ```javascript
-const VultrexDB = require("vultrexdb");
+const { VultrexDB, SQLiteProvider, MongoDBProvider } = require("vultrex.db");
 
-const db = new VultrexDB();
-```
-
-#### Options
-```
-name (string) - This is the name of your database table
-timeout (number) - This is the number (in milliseconds) to wait before executing queries on a locked database before throwing an error
-fileMustExist (boolean) - When set to true, if the file does not exist then an error will be thrown
-verbose (function) - Provide a function which is used on every SQL string executed by the database
-```
-
-#### Defining with Options
-```javascript
-const VultrexDB = require("vultrexdb");
-
+// SQLite Database - only use if you're using SQLite
 const db = new VultrexDB({
-  name: "yourDatabaseName",
-  timeout: 5000,
-  fileMustExist: false,
-  verbose: null 
+  provider: new SQLiteProvider({ name: "databaseName", fileName: "dataFileName" })
 });
-```
 
-#### Return a value from a provided key:
+// MongoDB Database - only use if you're using MongoDB
+const db = new VultrexDB({
+  provider: new MongoDBProvider({ url: "connectionStringForMongoDB" })
+});
 
-```javascript
-return db.get("key");
-```
+await db.connect(); // this is mandatory
 
-Optionally, you can return a default value if none exists in the database:
+// Set Values on Keys in Database
+await db.set("foo", "bar");
 
-```javascript
-return db.get("key", "defaultValue");
-```
+// Return an Array of Objects containing the Keys and Values from the Database
+console.log(await db.getAll());
 
-#### Set a value with a provided key:
+// Return the Value of a Key from the Database - if this fails, you can return a optional Default Value
+console.log(await db.get("foo", "defaultValue"));
 
-```javascript
-db.set("key", "newValue");
-```
+// Delete a Key from the Database
+await db.delete("foo");
 
-#### Remove a provided key:
+// Delete all Keys from the Database
+await db.clear();
 
-```javascript
-db.remove("key");
-```
-
-#### Destroy the entire table (WARNING: you will lose all data from doing this):
-
-```javascript
-db.clear();
+// Return a Number of Keys in the Database
+console.log(await db.size());
 ```
