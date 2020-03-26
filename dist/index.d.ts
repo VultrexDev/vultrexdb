@@ -1,8 +1,10 @@
-import { SQLiteProvider } from "../providers/SQLiteProvider";
-import { MongoDBProvider } from "../providers/MongoDBProvider";
-import { RowData } from "../interfaces/RowData";
+import { RowData } from "./interfaces/RowData";
 interface VultrexDBOptions {
-    provider: SQLiteProvider | MongoDBProvider;
+    provider: string;
+    table?: string;
+    fileName?: string;
+    collection?: string;
+    url?: string;
 }
 export declare class VultrexDB {
     private provider;
@@ -66,7 +68,7 @@ export declare class VultrexDB {
      * await db.connect();
      * await db.set("key", "newValue");
     */
-    set(key: string | number, value: any): Promise<void>;
+    set(key: string | number, value: any): Promise<any>;
     /**
      * Delete a key from the database
      *

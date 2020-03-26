@@ -2,27 +2,21 @@
   "name": "vultrex.db",
   "version": "1.0.0",
   "description": "A simple key value wrapper made for the community of Vultrex Development",
-  "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
-  "directories": {
-    "lib": "lib"
-  },
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "build": "tsc"
   },
   "author": "Vultrex Development",
-  "license": "ISC",
-  "files": [
-    "lib",
-    "typings"
-  ],
+  "license": "MIT",
   "peerDependencies": {
     "sqlite": "^3.0.3",
     "mongodb": "^3.5.5"
   },
   "devDependencies": {
-    "@types/mongodb": "^3.5.2"
-  },
-  "dependencies": {
+    "@types/mongodb": "^3.5.3",
+    "@types/node": "^12.12.31",
+    "mongodb": "^3.5.5",
+    "sqlite": "^3.0.6"
   }
 }

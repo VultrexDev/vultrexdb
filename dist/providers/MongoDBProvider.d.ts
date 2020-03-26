@@ -1,11 +1,14 @@
-import { MongoDBProviderOptions } from "../interfaces/MongoDBProviderOptions";
 import { RowData } from "../interfaces/RowData";
-export declare class MongoDBProvider {
+interface MongoDBProviderOptions {
+    url: string;
+    collection: string | 'vultrexdb';
+}
+export default class MongoDBProvider {
     private url;
-    private collectionName;
+    private collection;
     private client;
     private db;
-    private collection;
+    private coll;
     initialized: boolean;
     constructor(options: MongoDBProviderOptions);
     init(): Promise<void>;
@@ -16,3 +19,4 @@ export declare class MongoDBProvider {
     delete(key: string | number): Promise<void>;
     clear(): Promise<void>;
 }
+export {};

@@ -1,34 +1,41 @@
-# Vultrex DB v2
+# VultrexDB
 
-A simple SQLite / MongoDB Database Wrapper developed for novices in JavaScript and SQL - Developed with <3 by Stasium#0001, Documentation by Host#0001
+> A simple SQLite/MongoDB database wrapper designed for novices – developed with ♥ by Stasium#0001. Documentation by Host#0001
 
 ## Installation
 ```bash
 npm i vultrex/vultrexdb
-```  
-
-### SQLite Installation
-```bash
-npm i sqlite
 ```
 
-### MongoDB Installation
+### Providers
+
+VultrexDB supports "providers" to support persistent databases. Supports providers are MonogDB and SQLite.
+
+Install one of the following providers of your choice: 
+
 ```bash
+# SQLite
+npm i sqlite
+
+# MongoDB
 npm i mongodb
 ```
  
-### Basic Documentation
+## Example usage
+
 ```javascript
-const { VultrexDB, SQLiteProvider, MongoDBProvider } = require("vultrex.db");
+const { VultrexDB } = require("vultrex.db");
 
-// SQLite Database - only use if you're using SQLite
+// One of the following:
 const db = new VultrexDB({
-  provider: new SQLiteProvider({ name: "databaseName", fileName: "dataFileName" })
+  provider: 'sqlite',
+  table: 'mytable',
+  fileName: 'database'
 });
-
-// MongoDB Database - only use if you're using MongoDB
 const db = new VultrexDB({
-  provider: new MongoDBProvider({ url: "connectionStringForMongoDB" })
+  url: 'myMongoURI',
+  provider: 'mongodb',
+  collection: 'mycollection'
 });
 
 await db.connect(); // this is mandatory
