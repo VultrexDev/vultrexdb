@@ -1,6 +1,6 @@
 # VultrexDB
 
-> A simple SQLite/MongoDB database wrapper designed for novices – developed with ♥ by Stasium#0001. Documentation by Host#0001
+> A simple SQLite/MongoDB database wrapper designed for novices – developed with ♥ by Stasium#0001 and chroventer#5269. Documentation by Host#0001
 
 ## Installation
 ```bash
