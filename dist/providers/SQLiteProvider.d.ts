@@ -1,9 +1,12 @@
-import { SQLiteProviderOptions } from "../interfaces/SQLiteProviderOptions";
 import { RowData } from "../interfaces/RowData";
-export declare class SQLiteProvider {
+interface SQLiteProviderOptions {
+    table: string | 'vultrexdb';
+    fileName: string | 'vultrexdb';
+}
+export default class SQLiteProvider {
     private db;
-    private tableName;
-    private fileName;
+    table: string;
+    fileName: string;
     initialized: boolean;
     constructor(config: SQLiteProviderOptions);
     init(): Promise<void>;
@@ -14,3 +17,4 @@ export declare class SQLiteProvider {
     delete(key: string | number): Promise<void>;
     clear(): Promise<void>;
 }
+export {};
