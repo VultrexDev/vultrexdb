@@ -1,6 +1,6 @@
 # VultrexDB
 
-> A simple SQLite/MongoDB database wrapper designed for novices – developed with ♥ by Stasium#0001 and chroventer#5269. Documentation by Host#0001 and chroventer#5269.
+> A simple SQLite/MongoDB database wrapper designed for novices – developed with ♥ by Stasium#0001, Host#0001 and chroventer#5269. Documentation by Host#0001 and chroventer#5269.
 
 ## Installation
 ```bash
@@ -45,6 +45,9 @@ await db.set("foo", "bar");
 
 // Return an Array of Objects containing the Keys and Values from the Database
 console.log(await db.getAll());
+
+// Return an Array of Objects containing the Keys and Values from the Database which includes the characters "fo" in the key
+console.log(await db.getAll("fo")); 
 
 // Return the Value of a Key from the Database - if this fails, you can return a optional Default Value
 console.log(await db.get("foo", "defaultValue"));
