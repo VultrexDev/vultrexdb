@@ -31,14 +31,15 @@ export class VultrexDB {
 	 * @example
 	 * const { VultrexDB } = require("vultrex.db");
 	 * const db = new VultrexDB({
-	 *     provider: new SQLiteProvider({ name: "main" })
+	 *     provider: "sqlite"
 	 * });
 	 * await db.connect();
 	 * 
 	 * @example
 	 * const { VultrexDB } = require("vultrex.db");
 	 * const db = new VultrexDB({
-	 * 		provider: new MongoDBProvider({ url: "urlConnectionString" })
+	 * 		provider: "mongodb",
+	 *      url: "connectionString"
 	 * });
 	 * await db.connect();
 	*/
@@ -68,6 +69,8 @@ export class VultrexDB {
 	/**
 	 * Return an array of all values from the database
 	 * 
+	 * @param key
+	 * 
 	 * @example
 	 * const { VultrexDB } = require("vultrex.db");
 	 * const db = new VultrexDB({
@@ -76,9 +79,9 @@ export class VultrexDB {
 	 * await db.connect();
 	 * const values = await db.getAll();
 	*/
-	public async getAll(): Promise<RowData[]> {
+	public async getAll(key: string | number): Promise<RowData[]> {
 		this.checkReady();
-		return this.provider.getAll();
+		return this.provider.getAll(key);
 	}
 
 	/**

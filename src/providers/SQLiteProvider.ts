@@ -31,8 +31,9 @@ export default class SQLiteProvider {
 		return data ? JSON.parse(data["value"]) : defaultValue;
 	}
 
-	public async getAll(): Promise<RowData[]> {
-		const data = await this.db.all(`SELECT * FROM '${this.table}';`);
+	public async getAll(key: string | number): Promise<RowData[]> {
+		const query = key ? `SELECT * FROM '${this.table}' WHERE key LIKE '%${key}%';` : `SELECT * FROM '${this.table}';`;
+		const data = await this.db.all(query);
 		return data.map(data => ({ key: data["key"], value: JSON.parse(data["value"]) }));
 	}
 

@@ -12,7 +12,7 @@ export default class SQLiteProvider {
     init(): Promise<void>;
     set(key: string | number, value: any): Promise<void>;
     get<T>(key: string | number, defaultValue: any): Promise<T>;
-    getAll(): Promise<RowData[]>;
+    getAll(key: string | number): Promise<RowData[]>;
     size(): Promise<any>;
     delete(key: string | number): Promise<void>;
     clear(): Promise<void>;

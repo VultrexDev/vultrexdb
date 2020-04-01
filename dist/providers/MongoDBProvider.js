@@ -22,8 +22,8 @@ class MongoDBProvider {
         const result = data["value"];
         return result !== null ? result : defaultValue;
     }
-    async getAll() {
-        const data = await this.coll.find({}).toArray();
+    async getAll(key) {
+        const data = key ? await this.coll.find({ "key": /^${key}/ }).toArray() : await this.coll.find({}).toArray();
         return data.map((data) => ({ key: data["_id"], value: data["value"] }));
     }
     async size() {

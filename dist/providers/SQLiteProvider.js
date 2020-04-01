@@ -22,8 +22,9 @@ class SQLiteProvider {
         const data = await this.db.get(`SELECT * FROM '${this.table}' WHERE key = ?;`, key);
         return data ? JSON.parse(data["value"]) : defaultValue;
     }
-    async getAll() {
-        const data = await this.db.all(`SELECT * FROM '${this.table}';`);
+    async getAll(key) {
+        const query = key ? `SELECT * FROM '${this.table}' WHERE key LIKE '%${key}%';` : `SELECT * FROM '${this.table}';`;
+        const data = await this.db.all(query);
         return data.map(data => ({ key: data["key"], value: JSON.parse(data["value"]) }));
     }
     async size() {

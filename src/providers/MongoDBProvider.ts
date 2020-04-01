@@ -36,8 +36,8 @@ export default class MongoDBProvider {
 		return result !== null ? result : defaultValue;
 	}
 
-	public async getAll(): Promise<RowData[]> {
-		const data = await this.coll.find({}).toArray();
+	public async getAll(key: string | number): Promise<RowData[]> {
+		const data = key ? await this.coll.find({ "key": /^${key}/ }).toArray() : await this.coll.find({}).toArray();
 		return data.map((data: any) => ({ key: data["_id"], value: data["value"] }));
 	}
 
