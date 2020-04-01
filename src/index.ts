@@ -81,7 +81,7 @@ export class VultrexDB {
 	*/
 	public async getAll(key: string | number): Promise<RowData[]> {
 		this.checkReady();
-		return this.provider.getAll();
+		return this.provider.getAll(key);
 	}
 
 	/**

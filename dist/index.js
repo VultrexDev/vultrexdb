@@ -68,7 +68,7 @@ class VultrexDB {
     */
     async getAll(key) {
         this.checkReady();
-        return this.provider.getAll();
+        return this.provider.getAll(key);
     }
     /**
      * Set a value of a key in the database
