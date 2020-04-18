@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@types/mongodb": "^3.5.3",
-    "@types/node": "^12.12.31",
+    "@types/node": "^12.12.36",
     "mongodb": "^3.5.5",
     "rimraf": "^3.0.2",
     "sqlite": "^3.0.6"

@@ -25,7 +25,7 @@ class SQLiteProvider {
     async getAll(key) {
         const query = key ? `SELECT * FROM '${this.table}' WHERE key LIKE '%${key}%';` : `SELECT * FROM '${this.table}';`;
         const data = await this.db.all(query);
-        return data.map(data => ({ key: data["key"], value: JSON.parse(data["value"]) }));
+        return data.map((data) => ({ key: data["key"], value: JSON.parse(data["value"]) }));
     }
     async size() {
         const data = await this.db.get(`SELECT count(*) FROM '${this.table}';`);

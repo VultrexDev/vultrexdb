@@ -34,7 +34,7 @@ export default class SQLiteProvider {
 	public async getAll(key: string | number): Promise<RowData[]> {
 		const query = key ? `SELECT * FROM '${this.table}' WHERE key LIKE '%${key}%';` : `SELECT * FROM '${this.table}';`;
 		const data = await this.db.all(query);
-		return data.map(data => ({ key: data["key"], value: JSON.parse(data["value"]) }));
+		return data.map((data: any) => ({ key: data["key"], value: JSON.parse(data["value"]) }));
 	}
 
 	public async size(): Promise<any> {
