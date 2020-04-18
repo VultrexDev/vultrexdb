@@ -10,7 +10,8 @@
     "noImplicitThis": true,
     "esModuleInterop": true,
     "strictNullChecks": false,
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+    "pretty": true
   },
   "exclude": [
     "node_modules",
