@@ -32,8 +32,7 @@ export default class MongoDBProvider {
 
 	public async get<T>(key: string | number, defaultValue: any): Promise<T> {
 		const data = await this.coll.findOne({ _id: key });
-		const result = data["value"];
-		return result !== null ? result : defaultValue;
+		return data !== null ? data.value : defaultValue;
 	}
 
 	public async getAll(key: string | number): Promise<RowData[]> {
