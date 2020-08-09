@@ -1,9 +1,6 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const sqlite_1 = __importDefault(require("sqlite"));
+const sqlite_1 = require("sqlite");
 class SQLiteProvider {
     constructor(config) {
         this.initialized = false;
@@ -11,7 +8,7 @@ class SQLiteProvider {
         this.fileName = config.fileName;
     }
     async init() {
-        this.db = await sqlite_1.default.open(`./${this.fileName}.db`);
+        this.db = await sqlite_1.open(`./${this.fileName}.db`);
         await this.db.run(`CREATE TABLE IF NOT EXISTS '${this.table}' (key TEXT PRIMARY KEY, value TEXT);`);
         this.initialized = true;
     }
