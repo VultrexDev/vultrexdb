@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.VultrexDB = void 0;
 const load = (options) => {
     const providers = {
         sqlite: './providers/SQLiteProvider',

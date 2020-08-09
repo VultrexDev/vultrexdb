@@ -1,4 +1,4 @@
-import sqlite, { Database } from "sqlite";
+import { Database, open } from "sqlite";
 import { RowData } from "../interfaces/RowData";
 
 interface SQLiteProviderOptions {
@@ -17,7 +17,7 @@ export default class SQLiteProvider {
 	}
 
 	public async init() {
-		this.db = await sqlite.open(`./${this.fileName}.db`);
+		this.db = await open(`./${this.fileName}.db`);
 		await this.db.run(`CREATE TABLE IF NOT EXISTS '${this.table}' (key TEXT PRIMARY KEY, value TEXT);`);
 		this.initialized = true;
 	}
